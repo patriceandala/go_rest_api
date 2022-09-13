@@ -73,11 +73,11 @@ func NewHandler(serverKey string,
 
 // HandlePaymentNotification handle payment notification from midtrans to
 // update our payment status. The flow on this are:
-//     1. Our system receive the request
-//     2. Validate the payload and signature
-//     3. Send GetTransactionStatus Request to midtrans to get the reliable
-//        status for our transaction
-//        (ref# https://api-docs.midtrans.com/?go#receiving-notifications)
+//  1. Our system receive the request
+//  2. Validate the payload and signature
+//  3. Send GetTransactionStatus Request to midtrans to get the reliable
+//     status for our transaction
+//     (ref# https://api-docs.midtrans.com/?go#receiving-notifications)
 //
 // TODO (novian): Add call to geofencing API for success payment
 func (h *Handler) HandleTransactionUpdate(w http.ResponseWriter, r *http.Request) {
