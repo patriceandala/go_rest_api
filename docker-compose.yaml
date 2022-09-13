@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+   http-server:
+    container_name: http-server
+    build:
+       context: .
+       args:
+           GITHUB_TOKEN: ${GITHUB_TOKEN}
+           VERSION: "development"
+    ports:
+      - "5001:5001" 
+    environment:
+      LOG_LEVEL: "debug"
